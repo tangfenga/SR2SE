@@ -16,8 +16,6 @@ Changbin Cheng<sup>1*</sup>, Jisheng Dang<sup>1</sup>, Hong Peng<sup>1</sup>, Yu
 
 ---
 
-![Framework Overview (Figure 1)](assets/figure1.png)
-
 ## 📖 Introduction
 
 > **Core Concept**: Transition from "static and passive" self-rewarding to "dynamic and active" self-evolving.
@@ -46,6 +44,9 @@ Our framework consists of three core components:
 
 ## 🚀 Methodology
 
+![Framework Overview (Figure 1)](assets/figure1.png)
+*(Figure 1 from the paper.)*
+
 
 ### 1. Dynamic Reasoning (Stage 1: HSR-EE)
 The model passes through a confidence gate ($g_{\phi}$) after each reasoning step.
@@ -59,7 +60,10 @@ When the model's answer is detected as incorrect (based on $a_{gt}$) during trai
 
 ### 3. Preference Optimization (Stage 3: SR-DPO)
 Using the constructed $(y_w, y_l)$ pairs, we minimize the probability of the hallucination path and maximize the correction path via the DPO objective:
-$$\mathcal{L}_{SR-DPO} = -\mathbb{E} \left[ \log \sigma \left( \beta \log \frac{\pi_{\theta}(y_w|x)}{\pi_{ref}(y_w|x)} - \beta \log \frac{\pi_{\theta}(y_l|x)}{\pi_{ref}(y_l|x)} \right) \right]$$
+
+```math
+\mathcal{L}_{SR-DPO} = -\mathbb{E} \left[ \log \sigma \left( \beta \log \frac{\pi_{\theta}(y_w|x)}{\pi_{ref}(y_w|x)} - \beta \log \frac{\pi_{\theta}(y_l|x)}{\pi_{ref}(y_l|x)} \right) \right]
+```
 
 ![Additional Illustration (Figure 5)](assets/figure5.png)
 *(Figure 5 from the paper.)*
@@ -190,22 +194,22 @@ python -m evalscope.run \
 
 This project builds upon the contributions of the open-source community. We especially thank the following excellent open-source projects and research:
 
-* **Baseline & Inspiration**:
-  * [Vision-SR1: Self-rewarding vision-language model via reasoning decomposition](https://arxiv.org/abs/2508.19652) (Li et al., 2025)
+- **Baseline & Inspiration**:
+  - [Vision-SR1: Self-rewarding vision-language model via reasoning decomposition](https://arxiv.org/abs/2508.19652) (Li et al., 2025)
 
-* **Fine-Tuning Framework**:
-  * [LlamaFactory](https://github.com/hiyouga/LLaMA-Factory) - Provides efficient SFT training infrastructure.
+- **Fine-Tuning Framework**:
+  - [LlamaFactory](https://github.com/hiyouga/LLaMA-Factory) - Provides efficient SFT training infrastructure.
 
-* **Reinforcement Learning Framework**:
-  * [veRL](https://github.com/volcengine/verl) - Volcano Engine Reinforcement Learning for LLMs. We leverage veRL for efficient SR-DPO training.
+- **Reinforcement Learning Framework**:
+  - [veRL](https://github.com/volcengine/verl) - Volcano Engine Reinforcement Learning for LLMs. We leverage veRL for efficient SR-DPO training.
 
-* **Evaluation Framework**:
-  * [EvalScope](https://github.com/modelscope/evalscope) - A streamlined framework for efficient large model evaluation.
+- **Evaluation Framework**:
+  - [EvalScope](https://github.com/modelscope/evalscope) - A streamlined framework for efficient large model evaluation.
 
-* **Prior Research**:
-  * We build upon foundational work from LLaVA, GPT-4V, DeepSeek-R1, and other pioneering multimodal reasoning research.
+- **Prior Research**:
+  - We build upon foundational work from LLaVA, GPT-4V, DeepSeek-R1, and other pioneering multimodal reasoning research.
 
-<!-- ---
+---
 
 ## 🖊️ Citation
 
@@ -218,4 +222,4 @@ If you find this paper or code helpful for your research, please cite:
   journal={IEEE Transactions on Image Processing (Under Review)},
   year={2026}
 }
-``` -->
+```
