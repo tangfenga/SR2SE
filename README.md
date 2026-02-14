@@ -66,10 +66,6 @@ Using the constructed $(y_w, y_l)$ pairs, we minimize the probability of the hal
 ```math
 \mathcal{L}_{SR-DPO} = -\mathbb{E} \left[ \log \sigma \left( \beta \log \frac{\pi_{\theta}(y_w|x)}{\pi_{ref}(y_w|x)} - \beta \log \frac{\pi_{\theta}(y_l|x)}{\pi_{ref}(y_l|x)} \right) \right]
 ```
-
-![Main Results](assets/main_results_accuracy.png)
-*(Performance on MMMU, MM-Vet, and POPE with reduced language shortcuts.)*
-
 ---
 
 ## 📊 Experimental Results
