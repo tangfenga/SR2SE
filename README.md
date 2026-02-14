@@ -3,7 +3,7 @@
 # From Self-Rewarding to Self-Evolving
 ## A Unified Framework for Adaptive Multimodal Reasoning
 
-Changbin Cheng<sup>1*</sup>, Jisheng Dang<sup>1</sup>, Hong Peng<sup>1</sup>, Yulan Guo<sup>2</sup>, Bin Hu<sup>3</sup>, Tat-Seng Chua<sup>4</sup>
+Changbin Cheng<sup>1*</sup>, Jisheng Dang<sup>1</sup>, Bimei Wang<sup>1</sup>, Yulan Guo<sup>2</sup>, Bin Hu<sup>3</sup>, Tat-Seng Chua<sup>4</sup>
 
 <sup>1</sup>Lanzhou University &nbsp; <sup>2</sup>National University of Defense Technology &nbsp; <sup>3</sup>Beijing Institute of Technology &nbsp; <sup>4</sup>National University of Singapore
 
