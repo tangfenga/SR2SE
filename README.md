@@ -210,17 +210,3 @@ This project builds upon the contributions of the open-source community. We espe
 - **Prior Research**:
   - We build upon foundational work from LLaVA, GPT-4V, DeepSeek-R1, and other pioneering multimodal reasoning research.
 
----
-
-## 🖊️ Citation
-
-If you find this paper or code helpful for your research, please cite:
-
-```bibtex
-@article{cheng2026selfevolving,
-  title={From Self-Rewarding to Self-Evolving: A Unified Framework for Adaptive Multimodal Reasoning},
-  author={Cheng, Changbin and Dang, Jisheng and Peng, Hong and Guo, Yulan and Hu, Bin and Chua, Tat-Seng},
-  journal={IEEE Transactions on Image Processing (Under Review)},
-  year={2026}
-}
-```
