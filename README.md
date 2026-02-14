@@ -1,7 +1,7 @@
 <div align="center">
 
 # From Self-Rewarding to Self-Evolving
-## Advancing Vision-Language Models via Hierarchical Reasoning and Preference Optimization
+## A Unified Framework for Adaptive Multimodal Reasoning
 
 Changbin Cheng<sup>1*</sup>, Jisheng Dang<sup>1</sup>, Hong Peng<sup>1</sup>, Yulan Guo<sup>2</sup>, Bin Hu<sup>3</sup>, Tat-Seng Chua<sup>4</sup>
 
@@ -22,7 +22,9 @@ Changbin Cheng<sup>1*</sup>, Jisheng Dang<sup>1</sup>, Hong Peng<sup>1</sup>, Yu
 
 Existing Vision-Language Models (VLMs) are often constrained by **visual hallucinations** and **language shortcuts**. Traditional "self-rewarding" paradigms typically rely on static reasoning chains and coarse-grained binary rewards, making it difficult to handle complex visual logic.
 
-This project is the official implementation of the paper **"From Self-Rewarding to Self-Evolving: A Unified Framework for Vision-Language Models via Hierarchical Reasoning and Preference Optimization"**. We propose a unified **Self-Evolving Framework** that simulates the human "fast thinking and slow thinking" mechanism, achieving adaptive reasoning depth and enabling the model to learn autonomously from its mistakes.
+This project is the official implementation of the paper **"From Self-Rewarding to Self-Evolving: A Unified Framework for Adaptive Multimodal Reasoning"**. We propose a unified **Self-Evolving Framework** that enables adaptive reasoning depth and turns failed trajectories into reusable optimization signals, so the model can continuously improve visual grounding and reduce language shortcuts.
+
+![Motivation](assets/motivation.drawio.png)
 
 ### ✨ Key Features
 
@@ -44,8 +46,8 @@ Our framework consists of three core components:
 
 ## 🚀 Methodology
 
-![Framework Overview (Figure 1)](assets/figure1.png)
-*(Figure 1 from the paper.)*
+![Framework Overview](assets/overview.drawio.png)
+*(Overview of HSR-EE, IPR, and SR-DPO.)*
 
 
 ### 1. Dynamic Reasoning (Stage 1: HSR-EE)
@@ -65,8 +67,8 @@ Using the constructed $(y_w, y_l)$ pairs, we minimize the probability of the hal
 \mathcal{L}_{SR-DPO} = -\mathbb{E} \left[ \log \sigma \left( \beta \log \frac{\pi_{\theta}(y_w|x)}{\pi_{ref}(y_w|x)} - \beta \log \frac{\pi_{\theta}(y_l|x)}{\pi_{ref}(y_l|x)} \right) \right]
 ```
 
-![Additional Illustration (Figure 5)](assets/figure5.png)
-*(Figure 5 from the paper.)*
+![Main Results](assets/main_results_accuracy.png)
+*(Performance on MMMU, MM-Vet, and POPE with reduced language shortcuts.)*
 
 ---
 
@@ -81,7 +83,6 @@ Our method achieves SOTA performance on multiple benchmarks and significantly re
 | **MMMU (Val)** | 58.6 | **62.1** | 🟢 +3.5 |
 | **MM-Vet** | 69.7 | **71.2** | 🟢 +1.5 |
 | **POPE (F1)** | 85.9 | **90.2** | 🟢 +4.3 |
-| **MathVista** | 68.1 | **69.8** | 🟢 +1.7 |
 
 > 📉 **Hallucination Rate**: While maintaining efficient reasoning, we reduce the hallucination rate by **40%+**.
 
@@ -217,7 +218,7 @@ If you find this paper or code helpful for your research, please cite:
 
 ```bibtex
 @article{cheng2026selfevolving,
-  title={From Self-Rewarding to Self-Evolving: A Unified Framework for Vision-Language Models via Hierarchical Reasoning and Preference Optimization},
+  title={From Self-Rewarding to Self-Evolving: A Unified Framework for Adaptive Multimodal Reasoning},
   author={Cheng, Changbin and Dang, Jisheng and Peng, Hong and Guo, Yulan and Hu, Bin and Chua, Tat-Seng},
   journal={IEEE Transactions on Image Processing (Under Review)},
   year={2026}
