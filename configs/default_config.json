@@ -1,0 +1,54 @@
+{
+  "model": {
+    "model_name_or_path": "Qwen/Qwen-VL-Chat",
+    "use_flash_attention": true,
+    "bf16": true,
+    "gradient_checkpointing": true,
+    "lora_rank": 0,
+    "lora_alpha": 16,
+    "device_map": "auto"
+  },
+  "hsr_ee": {
+    "confidence_threshold": 0.7,
+    "max_reasoning_steps": 5,
+    "length_penalty_lambda": 0.1,
+    "confidence_head_hidden_dim": 256,
+    "adaptive_threshold": true,
+    "threshold_lr": 0.001
+  },
+  "ipr": {
+    "max_refinement_iterations": 2,
+    "refinement_prompt_template": "The description '{perception}' was insufficient to answer the question correctly. Please re-examine the image. Focus on spatial relationships and small details that were missed. Provide a refined description.",
+    "discard_failed_samples": true,
+    "num_samples": 50000
+  },
+  "sr_dpo": {
+    "beta": 0.1,
+    "learning_rate": 5e-7,
+    "batch_size": 64,
+    "num_epochs": 3,
+    "gradient_accumulation_steps": 4,
+    "max_seq_length": 2048,
+    "warmup_ratio": 0.1,
+    "weight_decay": 0.01,
+    "max_grad_norm": 1.0
+  },
+  "sft": {
+    "num_epochs": 1,
+    "learning_rate": 5e-5,
+    "batch_size": 4,
+    "gradient_accumulation_steps": 4,
+    "dataset_name": "llava_instruct_150k",
+    "max_seq_length": 2048
+  },
+  "output_dir": "./output",
+  "sft_output_dir": "./output/sft_ckpt",
+  "ipr_data_dir": "./output/ipr_data",
+  "hsr_ee_output_dir": "./output/hsr_ee_ckpt",
+  "sr_dpo_output_dir": "./output/sr_dpo_ckpt",
+  "eval_output_dir": "./output/eval_results",
+  "logging_steps": 10,
+  "save_steps": 500,
+  "eval_steps": 500,
+  "seed": 42
+}
