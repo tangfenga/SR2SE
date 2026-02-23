@@ -308,7 +308,7 @@ python -m evalscope.run \
 
 ---
 
-## � Module Details
+## Module Details
 
 ### Confidence Head (`g_φ`)
 The confidence gate is a lightweight MLP that maps hidden states to an exit probability (Eq. 10):
@@ -338,7 +338,7 @@ $$\mathcal{L}_{\text{SR-DPO}} = -\mathbb{E}[\log \sigma(f_\theta)]$$
 
 ---
 
-## �🤝 Acknowledgements
+## 🤝Acknowledgements
 
 This project builds upon the contributions of the open-source community. We especially thank the following excellent open-source projects and research:
 
